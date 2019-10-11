@@ -8,7 +8,7 @@ Additionally i added a feature to set awb red and blue gains if awb-mode is set 
 The original code was written by Bill Grainger.  
 
 ## Program
-Simple graphical interface for taking photos on the Raspberry Pi Camera.
+Simple graphical interface for taking photos on the Raspberry Pi Camera.  
 Works over ssh.  
 
 Written python 2.7 for the Raspberry Pi
