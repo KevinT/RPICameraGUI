@@ -21,7 +21,7 @@ wget https://github.com/kugelbit/RPICameraGUI
 python RPICameraGUI.py  
 ```
 
-Please note if you use ssh you need the -X Option.
+Please note: if you use ssh you need the -X Option.
 for example:
 `ssh -X pi@pi-ip-adress`
 
