@@ -26,9 +26,9 @@ for example:
 `ssh -X pi@pi-ip-adress`
 
 ## Customization
-Feel free to adapt the Code for your needs.
-Im not a GUI-Designer so the GUI in the code is maybe not optimal for your set up.
-Also this is only a little testing tool for me so dont expect to much "code-quality".
+Feel free to adapt the Code for your needs.  
+Im not a GUI-Designer so the GUI in the code is maybe not optimal for your set up.  
+Also this is only a little testing tool for me so dont expect to much "code-quality".  
 
 just play around with the following offsets (line: 42 to 47): 
 ```
