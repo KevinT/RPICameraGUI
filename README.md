@@ -32,7 +32,7 @@ Also this is only a little testing tool for me so dont expect to much "code-qual
 
 just play around with the following offsets (line: 42 to 47): 
 ```
-screen layout  
+# screen layout  
 xoffset= 2  
 xfilloffset = 70  
 xcomoffset=170  
