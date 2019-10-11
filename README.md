@@ -16,7 +16,7 @@ Written python 2.7 for the Raspberry Pi
 ## Installation
 
 `
-sudo apt-get install -y python-wxgtk2.8 python-wxtools <br> 
+sudo apt-get install -y python-wxgtk2.8 python-wxtools <br/>
 wget https://github.com/kugelbit/RPICameraGUI  
 python RPICameraGUI.py  
 `
