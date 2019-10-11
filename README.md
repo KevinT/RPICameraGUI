@@ -1,7 +1,7 @@
 RPICameraGUI
 ============
 
-#Rework
+## Rework
 
 I did some rework so the programm can be used with  the new wx-lib (tested version: 3.0.2.0 gtk3 (classic)).
 Additionally i added a feature to set awb red and blue gains if awb-mode is set to off.
@@ -16,9 +16,9 @@ Written python 2.7 for the Raspberry Pi
 ## Installation
 
 `
-sudo apt-get install -y python-wxgtk2.8 python-wxtools
-wget https://github.com/kugelbit/RPICameraGUI
-python RPICameraGUI.py
+sudo apt-get install -y python-wxgtk2.8 python-wxtools 
+wget https://github.com/kugelbit/RPICameraGUI 
+python RPICameraGUI.py 
 `
 
 Please note if you use ssh you need the -X Option.
