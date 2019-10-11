@@ -15,11 +15,11 @@ Written python 2.7 for the Raspberry Pi
 
 ## Installation
 
-`
-sudo apt-get install -y python-wxgtk2.8 python-wxtools <br/>
+```
+sudo apt-get install -y python-wxgtk2.8 python-wxtools 
 wget https://github.com/kugelbit/RPICameraGUI  
 python RPICameraGUI.py  
-`
+```
 
 Please note if you use ssh you need the -X Option.
 for example:
@@ -31,7 +31,7 @@ Im not a GUI-Designer so the GUI in the code is maybe not optimal for your set u
 Also this is only a little testing tool for me so dont expect to much "code-quality".
 
 just play around with the following offsets (line: 42 to 47): 
-`
+```
 screen layout  
 xoffset= 2  
 xfilloffset = 70  
@@ -39,7 +39,7 @@ xcomoffset=170
 ybtwoffset=35  
 ycomchkoffset=50  
 ycomfilloffset=45  
-`
+```
 
 
 
