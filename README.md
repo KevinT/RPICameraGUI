@@ -11,7 +11,7 @@ The original code was written by Bill Grainger.
 Simple graphical interface for taking photos on the Raspberry Pi Camera.  
 Works over ssh.  
 
-Written python 2.7 for the Raspberry Pi
+Written in python 2.7 for the Raspberry Pi
 
 ## Installation
 
