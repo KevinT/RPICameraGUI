@@ -62,14 +62,15 @@ class ViewerPanel(wx.Panel):
         self.cbh=wx.CheckBox(self.CS, -1, '-h ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.sch = wx.SpinCtrl(self.CS, -1, str(h), (xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), (60, -1), min=20, max=5000)
 
-""" going to use a generated file name based on time
-        # filename
-        offset = offset + 1
-        wx.StaticText(self.CS, -1,'filename for picture' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
-        self.cbo=wx.CheckBox(self.CS, -1, '-o ', (xoffset, ycomchkoffset + offset*ybtwoffset))
-        self.oname = wx.TextCtrl(self.CS, pos=(xoffset+xfilloffset,ycomfilloffset+ offset*ybtwoffset),size=(120, -1),value=defaultfilename) # default filename given
-        self.cbo.SetValue(True)
-"""
+        """ going to use a generated file name based on time
+                # filename
+                offset = offset + 1
+                wx.StaticText(self.CS, -1,'filename for picture' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
+                self.cbo=wx.CheckBox(self.CS, -1, '-o ', (xoffset, ycomchkoffset + offset*ybtwoffset))
+                self.oname = wx.TextCtrl(self.CS, pos=(xoffset+xfilloffset,ycomfilloffset+ offset*ybtwoffset),size=(120, -1),value=defaultfilename) # default filename given
+                self.cbo.SetValue(True)
+        """
+
         # quality
         offset = offset + 1
         wx.StaticText(self.CS, -1,'quality of jpg' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
@@ -286,7 +287,7 @@ class ViewerPanel(wx.Panel):
     def updateImages(self,msg):
         self.loadImage(imagefilename)
  
-     def onRotClock(self, event):
+    def onRotClock(self, event):
         """
         Rotates Image clockwise method, note it works on the image not the camera
         """
