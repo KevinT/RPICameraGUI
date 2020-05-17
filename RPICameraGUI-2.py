@@ -1,11 +1,10 @@
 # copied from the work by https://github.com/kugelbit/RPICameraGUI
 # modified to suit my own usage + 7" touch screen
-
+import time
 import os
 import wx
 import subprocess  # needed to run external program raspistill 
 from wx.lib.pubsub import pub as Publisher
-import time
 
 class ViewerPanel(wx.Panel):
 	def __init__(self, parent):
