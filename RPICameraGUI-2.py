@@ -7,7 +7,9 @@ import subprocess  # needed to run external program raspistill
 from wx.lib.pubsub import pub as Publisher
 
 class ViewerPanel(wx.Panel):
+
 	def __init__(self, parent):
+        
         wx.Panel.__init__(self, parent)
 
         width, height = wx.DisplaySize()
