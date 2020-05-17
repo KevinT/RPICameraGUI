@@ -7,7 +7,10 @@ import subprocess  # needed to run external program raspistill
 from wx.lib.pubsub import pub as Publisher
 
 class ViewerPanel(wx.Panel):
-
+    """
+    creates the main screen
+    """
+    
 	def __init__(self, parent):
         """set up for playing with images"""
         wx.Panel.__init__(self, parent)
