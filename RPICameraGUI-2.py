@@ -172,7 +172,7 @@ class ViewerPanel(wx.Panel):
         
         global imagefilename
         imagefilename = time.strftime("%Y%m%d-%H%M%S") + ".potshot.jpg"
-        defaulttimedelay = 3000
+        defaulttimedelay = "3000"
 
         # pick up all the settings selected and add to command line to be usd to take a picture
         self.cmdln='raspistill '
