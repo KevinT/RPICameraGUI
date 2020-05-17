@@ -1,11 +1,5 @@
-# Explore the Raspberry Pi Camera in a GUI
-# the cmd line instruction used to generate the photo is shown below the photo
-# Bill Grainger June 2013 updated Sept 2013
-
-# I learnt a lot about python to create this from various articles on stackoverflow forum
-# and image_viewer2.py by created on 03-20-2010 by Mike Driscoll
-
-
+# cloned from the work by https://github.com/kugelbit/RPICameraGUI
+# modified to suit my own usage + 7" touch screen
 import os
 import wx
 import subprocess  # needed to run external program raspistill 
