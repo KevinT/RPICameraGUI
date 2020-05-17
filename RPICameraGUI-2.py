@@ -6,6 +6,8 @@ import wx
 import subprocess  # needed to run external program raspistill 
 from wx.lib.pubsub import pub as Publisher
 
+defaulttimedelay = 3000
+
 class ViewerPanel(wx.Panel):
     def __init__(self, parent):
         """set up for playing with images"""
@@ -176,7 +178,7 @@ class ViewerPanel(wx.Panel):
         # pick up all the settings selected and add to command line to be usd to take a picture
         self.cmdln='raspistill '
         self.cmdln=self.cmdln + '-o "' + imagefilename +'" ' # file name
-        self.cmdln=self.cmdln + '-t 1000 ' # time delay
+        self.cmdln=self.cmdln + '-t ' + defaulttimedelay + '" ' # time delay
         
         """
         if self.cbw.GetValue() :
