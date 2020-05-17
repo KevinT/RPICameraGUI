@@ -50,6 +50,7 @@ class ViewerPanel(wx.Panel):
 
         offset = -1
 
+        """
         # width
         offset = offset + 1
         wx.StaticText(self.CS, -1,'width in pixels' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
@@ -61,6 +62,8 @@ class ViewerPanel(wx.Panel):
         wx.StaticText(self.CS, -1,'height in pixels' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
         self.cbh=wx.CheckBox(self.CS, -1, '-h ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.sch = wx.SpinCtrl(self.CS, -1, str(h), (xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), (60, -1), min=20, max=5000)
+        
+        """
 
         """ going to use a generated file name based on time
                 # filename
@@ -72,17 +75,21 @@ class ViewerPanel(wx.Panel):
         """
 
         # quality
+        """
         offset = offset + 1
         wx.StaticText(self.CS, -1,'quality of jpg' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
         self.cbq=wx.CheckBox(self.CS, -1, '-q ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.scq = wx.SpinCtrl(self.CS, -1, str(75), (xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), (60, -1), min=0, max=100)
+        """
 
+        """
         # time delay
         offset = offset + 1
         wx.StaticText(self.CS, -1,'time delay (ms) before' , (xcomoffset,ycomchkoffset + offset*ybtwoffset)) 
         self.cbt=wx.CheckBox(self.CS, -1, '-t ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.sct = wx.SpinCtrl(self.CS, -1, str(1000), (xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), (80, -1), min=100, max=100000000)
         self.cbt.SetValue(True)
+        """
 
         # sharpness
         offset = offset + 1
@@ -108,11 +115,13 @@ class ViewerPanel(wx.Panel):
         self.cbsa=wx.CheckBox(self.CS, -1, '-sa ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.scsa = wx.SpinCtrl(self.CS, -1, str(0), (xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), (60, -1), min=-100, max=100)
 
+        """
         # image rotation
         offset = offset + 1
         wx.StaticText(self.CS, -1,'rotate image' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
         self.cbrot=wx.CheckBox(self.CS, -1, '-rot ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.scrot = wx.ComboBox(self.CS, -1, pos=(xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), size=(90, -1), choices=rotmodes, style=wx.CB_READONLY)
+        """
 
         # exposure mode
         offset = offset + 1
@@ -164,8 +173,10 @@ class ViewerPanel(wx.Panel):
 
         # pick up all the settings selected and add to command line to be usd to take a picture
         self.cmdln='raspistill '
-        self.cmdln=self.cmdln + '-o "' + imagefilename +'" '
+        self.cmdln=self.cmdln + '-o "' + imagefilename +'" ' # file name
+        self.cmdln=self.cmdln + '-t 1000 ' # time delay
         
+        """
         if self.cbw.GetValue() :
             self.cmdln=self.cmdln + '-w ' + str(self.scw.GetValue()) +' '
         if self.cbh.GetValue() :
@@ -174,6 +185,7 @@ class ViewerPanel(wx.Panel):
             self.cmdln=self.cmdln + '-q ' + str(self.scq.GetValue())+' '
         if self.cbt.GetValue() :
             self.cmdln=self.cmdln + '-t ' + str(self.sct.GetValue())+' '      
+        """
         if self.cbsh.GetValue() :
             self.cmdln=self.cmdln + '-sh ' + str(self.scsh.GetValue())+' '
         if self.cbco.GetValue() :
@@ -182,8 +194,10 @@ class ViewerPanel(wx.Panel):
             self.cmdln=self.cmdln + '-br ' + str(self.scbr.GetValue())+' '
         if self.cbsa.GetValue() :
             self.cmdln=self.cmdln + '-sa ' + str(self.scsa.GetValue())+' '
+        """
         if self.cbrot.GetValue() :
             self.cmdln=self.cmdln + '-rot ' + str(self.scrot.GetValue())+' '
+        """
         if self.cbex.GetValue() :
             self.cmdln=self.cmdln + '-ex ' + str(self.scex.GetValue())+' '
         if self.cbev.GetValue() :
