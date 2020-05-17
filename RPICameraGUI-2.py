@@ -153,11 +153,13 @@ class ViewerPanel(wx.Panel):
         self.scawbblue = wx.SpinCtrlDouble(self, value='0.00', pos=(xoffset+xfilloffset+5, ycomfilloffset+ offset*ybtwoffset+5), size=(60, -1),
             min=-100, max=100, inc=0.25)
 
+        """
         # image effect
         offset = offset + 1
         wx.StaticText(self.CS, -1,'image effect' , (xcomoffset,ycomchkoffset + offset*ybtwoffset))
         self.cbifx=wx.CheckBox(self.CS, -1, '-ifx ', (xoffset, ycomchkoffset + offset*ybtwoffset))
         self.scifx = wx.ComboBox(self.CS, -1, pos=(xoffset+xfilloffset, ycomfilloffset+ offset*ybtwoffset), size=(90, -1), choices=ifxmodes, style=wx.CB_READONLY)
+        """
 
         # ---take photo---
         offset = offset + 1
@@ -208,9 +210,11 @@ class ViewerPanel(wx.Panel):
             if mode == "off":
                 #-awbg 1.5,1.2
                 self.cmdln=self.cmdln + '-awbg ' + str(self.scawbred.GetValue()) + ','+ str(self.scawbblue.GetValue()) +' '
+        """
         if self.cbifx.GetValue() :
             self.cmdln=self.cmdln + '-ifx ' + str(self.scifx.GetValue())+' '
-        
+        """
+
         # call external program ro take a picture
         subprocess.check_call([self.cmdln], shell=True)
 
@@ -231,8 +235,7 @@ class ViewerPanel(wx.Panel):
         self.imageLabel = wx.StaticText(self, label="")
         self.mainSizer.Add(self.imageLabel, 1, wx.ALL, 5)
         
-        btnData = [("Rot Clock 90", btnSizer, self.onRotClock),
-                   ("Rot Anti-clock 90", btnSizer, self.onRotAclock)]
+        btnData = [("Delete image", btnSizer, self.onDelete)]
         
         for data in btnData:
             label, sizer, handler = data
@@ -276,42 +279,17 @@ class ViewerPanel(wx.Panel):
         self.Refresh()
         Publisher.sendMessage("resize", msg="")
 
-    def rotPictureClock(self):
+    def deleteLastImage(self):
         """
-        Rotates the current picture clockwise but only does it once BG 12/6/13
-        as it does not store teh rotated image
+        Deletes the last image that was taken
         """
-       
-        self.img = self.img.Rotate90(True)
-        
-        # may need to scale the image, preserving the aspect ratio
-        self.rescaleImage()
-
-    def rotPictureAclock(self):
-        """
-        Rotates the current picture anti-clockwise but only does it once BG 12/6/13
-        as it does not store teh rotated image
-        """
-        
-        self.img = self.img.Rotate90(False)
-        
-        # may need to scale the image, preserving the aspect ratio
-        self.rescaleImage()
+        os.remove(imagefilename)
 
     def updateImages(self,msg):
         self.loadImage(imagefilename)
  
-    def onRotClock(self, event):
-        """
-        Rotates Image clockwise method, note it works on the image not the camera
-        """
-        self.rotPictureClock()
-
-    def onRotAclock(self, event):
-        """
-        Rotates Image anti-clockwise method  
-        """
-        self.rotPictureAclock()
+    def onDelete(self, event):
+        self.deleteLastImage()
 
       
 class ViewerFrame(wx.Frame):
