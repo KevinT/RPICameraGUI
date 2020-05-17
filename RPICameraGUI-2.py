@@ -1,17 +1,20 @@
-# copied from the work by https://github.com/kugelbit/RPICameraGUI
+# cloned from the work by https://github.com/kugelbit/RPICameraGUI
 # modified to suit my own usage + 7" touch screen
-import time
 import os
 import wx
 import subprocess  # needed to run external program raspistill 
 from wx.lib.pubsub import pub as Publisher
 
+defaultfilename = 'image.jpg'
+        
+########################################################################
 class ViewerPanel(wx.Panel):
     """
     creates the main screen
     """
     
-	def __init__(self, parent):
+    #----------------------------------------------------------------------
+    def __init__(self, parent):
         """set up for playing with images"""
         wx.Panel.__init__(self, parent)
 
