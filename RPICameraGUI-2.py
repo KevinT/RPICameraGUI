@@ -9,7 +9,7 @@ from wx.lib.pubsub import pub as Publisher
 class ViewerPanel(wx.Panel):
 
 	def __init__(self, parent):
-        
+        """set up for playing with images"""
         wx.Panel.__init__(self, parent)
 
         width, height = wx.DisplaySize()
